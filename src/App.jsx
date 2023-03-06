@@ -1,17 +1,18 @@
 import "./App.css"
 import { SplitScreen } from "./SplitScreen"
 
-const LeftHandComp = () => <h1 style={{ backgroundColor: "green" }}>Left</h1>
-const RightHandComp = () => <p style={{ backgroundColor: "rebeccapurple" }}>Right</p>
+const LeftHandComp = ({ name }) => <h1 style={{ backgroundColor: "green" }}>Hello {name}</h1>
+const RightHandComp = ({ message }) => <p style={{ backgroundColor: "rebeccapurple" }}>{message}</p>
 
 function App() {
   return (
     <SplitScreen
-      left={LeftHandComp}
       leftWeight={1}
       rightWeight={3}
-      right={RightHandComp}
-    />
+    >
+      <LeftHandComp name="Frank" />
+      <RightHandComp message="Welcome to React Patterns" />
+    </SplitScreen>
   )
 }
 
