@@ -2,24 +2,25 @@ import "./App.css"
 import { CurrentUserLoader } from "./CurrentUserLoader"
 import { UserLoader } from "./UserLoader"
 import { ResourceLoader } from "./ResourceLoader"
-import { UserInfo } from "./UserInfo"
 import { ProductInfo } from "./ProductInfo"
+import { DataSource } from "./DataSource"
+import { UserInfo } from "./UserInfo"
+import axios from "axios"
+
+const getServerData = (url) => async () => {
+  const response = await axios.get(url)
+  return response.data
+}
 
 function App() {
   return (
     <>
-      <ResourceLoader
-        resourceUrl="/api/users/123"
+      <DataSource
+        getDataFunc={getServerData("/api/users/123")}
         resourceName="user"
       >
         <UserInfo />
-      </ResourceLoader>
-      <ResourceLoader
-        resourceUrl="/api/products/1234"
-        resourceName="product"
-      >
-        <ProductInfo />
-      </ResourceLoader>
+      </DataSource>
     </>
   )
 }
