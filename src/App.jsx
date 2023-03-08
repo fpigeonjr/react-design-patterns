@@ -9,24 +9,8 @@ import { LargeProductListItem } from "./products/LargeProductListItem"
 import { NumberedList } from "./NumberedList"
 import { Modal } from "./Modal"
 
-const LeftHandComp = ({ name }) => (
-  <h1 style={{ backgroundColor: "green", color: "white" }}>Hello {name}</h1>
-)
-const RightHandComp = ({ message, children }) => {
-  return (
-    <>
-      <p style={{ backgroundColor: "rebeccapurple", color: "white" }}>{message}</p>
-      {children}
-    </>
-  )
-}
-
 function App() {
-  return (
-    <Modal>
-      <LargeProductListItem product={products[0]} />
-    </Modal>
-  )
+  return <h1>your code here</h1>
 }
 
 export default App
