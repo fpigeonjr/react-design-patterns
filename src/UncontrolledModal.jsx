@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-export const Modal = ({ children }) => {
+export const UncontrolledModal = ({ children }) => {
   const [shouldShow, setShouldShow] = React.useState(false)
 
   return (
